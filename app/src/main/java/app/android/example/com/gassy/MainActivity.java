@@ -1,5 +1,6 @@
 package app.android.example.com.gassy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -8,6 +9,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 /**
  * Created by lab on 6/18/2016.
@@ -31,10 +34,11 @@ public class MainActivity extends FragmentActivity{
     }
 
     //TODO: Move onto the next page while saving data gotten from current page.
-    public void submit (View view) {
-
-
-
+    public void sendToMaps(View view) {
+        Intent sendToMapClass = new Intent(this, MapsActivity.class);
+   //     sendToMapClass.putExtra("names_array", names); //in other class need to grab the array list by doing
+        //ArrayList<String> names = activityThatCalled.getExtras().getString("names_array");
+        startActivity(sendToMapClass);
     }
 
 }
